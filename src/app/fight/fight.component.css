@@ -63,15 +63,6 @@
     color: white;
 }
 
-#fightStatusText {
-    position: absolute;
-    text-align: center;
-    font-size: 2rem;
-    line-height: 2rem;
-    -webkit-text-stroke: 0.05rem black;
-    color: white;
-}
-
 .heart {
     position: relative;
     top: 0.5rem;

@@ -71,7 +71,7 @@ input {
     display: block;
     /* height: 500px; */
     width: 100%;
-    background-image: url("../../assets/shop.png_large.png");
+    background-image: url("../../assets/shop.png");
     background-size: cover;
     background-position: center;
     justify-content: space-around;

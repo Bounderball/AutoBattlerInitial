@@ -13,19 +13,16 @@ import { chooseBackground } from './fightUI';
 export class FightComponent {
 
   constructor(private r: Router, public httpServiceService: HttpServiceService, public renderer: Renderer2) {
-    
+
   }
 
   backgroundNumber: number;
   backgroundImageUrl: string;
+  fight_demo: object;
   heroesParty: Party;
   enemiesParty: Party;
-  fight_history: object;
-  currentTurn: number;
-
 
   ngOnInit() {
-    this.currentTurn = 0;
     this.chooseBackground();
     this.getFightHistory();
   }
