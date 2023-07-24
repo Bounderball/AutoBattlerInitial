@@ -1,0 +1,194 @@
+body {
+    background-color: black;
+}
+
+input {
+    border-radius: 1rem;
+}
+
+.characterImg {
+    position: relative;
+    /* top: 0rem; */
+    left: 2.8rem;
+    height: 8rem;
+    max-height: 8rem;
+    /* background-color: aqua; */
+    display: block;
+}
+
+.heart {
+    position: relative;
+    top: 0.5rem;
+    max-height: 2rem;
+}
+
+.attack {
+    position: relative;
+    top: 0.5rem;
+    max-height: 2rem;
+}
+
+.gold {
+    position: relative;
+    top: 2rem;
+    left: -0.5rem;
+    max-height: 2rem;
+}
+
+.button {
+    background-color: darkcyan;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border: solid rgb(0, 0, 0, 0.5) 1px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-text-stroke: 0px;
+}
+
+#shopBackground1 {
+    text-align: center;
+    background-image: url("../../assets/ShopBackground2.gif");
+    background-size: cover;
+    background-position: bottom;
+}
+
+#heroesDiv {
+    position: relative;
+    top: -5rem;
+    text-align: center;
+    display: flex;
+    height: 500px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#shopBackground2 {
+    display: block;
+    /* height: 500px; */
+    width: 100%;
+    background-image: url("../../assets/shop.png_large.png");
+    background-size: cover;
+    background-position: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#shopDiv {
+    text-align: center;
+    display: flex;
+    height: 500px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.characterDiv {
+    margin-top: 10rem;
+    /* background-color: coral; */
+    height: 300px;
+    width: 200px;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: x-large;
+    line-height: 1.2;
+    /* border-radius: 3rem; */
+    color: white;
+    -webkit-text-stroke: 0.7px black;
+}
+
+.shopCharacterDiv {
+    position: relative;
+    top: -10rem;
+    margin-top: 12rem;
+    margin-bottom: 0px;
+    /* background-color: coral; */
+    height: 300px;
+    width: 200px;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: x-large;
+    line-height: 1.2;
+    /* border-radius: 3rem; */
+    color: white;
+    -webkit-text-stroke: 0.7px black;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.panelContainer {
+    text-align: center;
+}
+
+#dragToReorderMessageDiv {
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+}
+
+#dragToReorderMessage {
+    border-radius: 3rem;
+    padding: 1rem;
+    background-color: blueviolet;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#switchingDiv {
+    position: absolute;
+    top: 35rem;
+    font-size: x-large;
+    color: white;
+    display: inline-block;
+}
+
+#sellingDiv {
+    position: absolute;
+    top: 35rem;
+    font-size: x-large;
+    color: white;
+    display: inline-block;
+}
+
+#switchingSpan {
+    -webkit-text-stroke: 0.5px black;
+}
+
+#sellingSpan {
+    -webkit-text-stroke: 0.5px black;
+}
+
+/* .cdk-drag:not(.cdk-drag-preview) {
+    transform: none !important;
+} */
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+#btnFight {
+    background-color: crimson;
+    border-radius: 2rem;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#btnFightDiv {
+    text-align: right;
+}

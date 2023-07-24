@@ -1,0 +1,133 @@
+<div id="shopBackground1">
+    <div id="dragToReorderMessageDiv">
+        <span id="dragToReorderMessage" *ngIf="dragToReorderMessage">Drag your party's characters to reorder them</span>
+    </div>
+    <div cdkDropList (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" id="heroesDiv">
+        <div cdkDrag class="characterDiv">
+            <img class="characterImg" *ngIf="user.user.party.first" src="../assets/{{user.user.party.first.type}}.gif"
+                alt="{{user.user.party.first.type}}" />
+            <img class="heart" *ngIf="user.user.party.first" src="../assets/pixelHeart.png" alt="heart" />
+            <span *ngIf="user.user.party.first">{{user.user.party.first.health}}</span>
+            <img class="attack" *ngIf="user.user.party.first" src="../assets/pixelSword.png" alt="sword" />
+            <span *ngIf="user.user.party.first">{{user.user.party.first.attack}}</span><br />
+            <span *ngIf="user.user.party.first">{{user.user.party.first.type}}</span><br />
+            <input class="button" *ngIf="buyFromProp !='' && !user.user.party.first" type="button" value="▲"
+                (click)="buyToMethod('first')" />
+            <input class="button" *ngIf="buyFromProp =='' && !moving && user.user.party.first" type="button"
+                value="SELL" (click)="sell('first')" /><br />
+        </div>
+        <div cdkDrag class="characterDiv" (cdkDragReleased)="release()">
+            <img class="characterImg" *ngIf="user.user.party.second" src="../assets/{{user.user.party.second.type}}.gif"
+                alt="{{user.user.party.second.type}}" />
+            <img class="heart" *ngIf="user.user.party.second" src="../assets/pixelHeart.png" alt="heart" />
+            <span *ngIf="user.user.party.second">{{user.user.party.second.health}}</span>
+            <img class="attack" *ngIf="user.user.party.second" src="../assets/pixelSword.png" alt="sword" />
+            <span *ngIf="user.user.party.second">{{user.user.party.second.attack}}</span><br />
+            <span *ngIf="user.user.party.second">{{user.user.party.second.type}}</span><br />
+            <input class="button" *ngIf="buyFromProp !='' && !user.user.party.second" type="button" value="▲"
+                (click)="buyToMethod('second')" />
+            <input class="button" *ngIf="buyFromProp =='' && !moving && user.user.party.second" type="button"
+                value="SELL" (click)="sell('second')" /><br />
+        </div>
+        <div cdkDrag class="characterDiv" (cdkDragReleased)="release()">
+            <img class="characterImg" *ngIf="user.user.party.third" src="../assets/{{user.user.party.third.type}}.gif"
+                alt="{{user.user.party.third.type}}" />
+            <img class="heart" *ngIf="user.user.party.third" src="../assets/pixelHeart.png" alt="heart" />
+            <span *ngIf="user.user.party.third">{{user.user.party.third.health}}</span>
+            <img class="attack" *ngIf="user.user.party.third" src="../assets/pixelSword.png" alt="sword" />
+            <span *ngIf="user.user.party.third">{{user.user.party.third.attack}}</span><br />
+            <span *ngIf="user.user.party.third">{{user.user.party.third.type}}</span><br />
+            <input class="button" *ngIf="buyFromProp !='' && !user.user.party.third" type="button" value="▲"
+                (click)="buyToMethod('third')" />
+            <input class="button" *ngIf="buyFromProp =='' && !moving && user.user.party.third" type="button"
+                value="SELL" (click)="sell('third')" /><br />
+        </div>
+        <div cdkDrag class="characterDiv" (cdkDragReleased)="release()">
+            <img class="characterImg" *ngIf="user.user.party.fourth" src="../assets/{{user.user.party.fourth.type}}.gif"
+                alt="{{user.user.party.fourth.type}}" />
+            <img class="heart" *ngIf="user.user.party.fourth" src="../assets/pixelHeart.png" alt="heart" />
+            <span *ngIf="user.user.party.fourth">{{user.user.party.fourth.health}}</span>
+            <img class="attack" *ngIf="user.user.party.fourth" src="../assets/pixelSword.png" alt="sword" />
+            <span *ngIf="user.user.party.fourth">{{user.user.party.fourth.attack}}</span><br />
+            <span *ngIf="user.user.party.fourth">{{user.user.party.fourth.type}}</span><br />
+            <input class="button" *ngIf="buyFromProp !='' && !user.user.party.fourth" type="button" value="▲"
+                (click)="buyToMethod('fourth')" />
+            <input class="button" *ngIf="buyFromProp =='' && !moving && user.user.party.fourth" type="button"
+                value="SELL" (click)="sell('fourth')" /><br />
+        </div>
+    </div>
+    <div id="switchingDiv" *ngIf="switching">
+        <span id="switchingSpan">Switching...</span>
+    </div>
+    <div id="sellingDiv" *ngIf="selling">
+        <span id="sellingSpan">Selling...</span>
+    </div>
+    <div id="btnFightDiv">
+        <input id="btnFight" type="button" value="TO BATTLE →" (click)="navToFight()" />
+    </div>
+</div>
+<div id="shopBackground2" style="border-top: solid black 6px;">
+    <div style="text-align: center;">
+        <img class="gold" src="../assets/pixelGold.png" alt="gold" />
+        <span
+            style="font-size: x-large; color: white; font-size: x-large; position: relative; top: 1.6rem;">{{this.user.user.gold}}</span><br />
+        <input class="button" type="button" value="ROLL" (click)="roll()"
+            style="background-color:darkgoldenrod; position: relative; top: 2rem;" /><br />
+    </div>
+    <div style="position: relative; top: 2.3rem; color: white; display: inline-block;">
+        <span *ngIf="rolling">Rolling...</span>
+        <span *ngIf="buying">Buying...</span>
+    </div>
+    <div cdkDropList cdkDropOrientation="horizontal" class="panelContainer" id="shopDiv">
+        <div class="panel">
+            <div class="shopCharacterDiv">
+                <img class="characterImg" *ngIf="user.user.shop.first" src="../assets/{{user.user.shop.first.type}}.gif"
+                    alt="{{user.user.shop.first.type}}" />
+                <img class="heart" *ngIf="user.user.shop.first" src="../assets/pixelHeart.png" alt="heart" />
+                <span *ngIf="user.user.shop.first">{{user.user.shop.first.health}}</span>
+                <img class="attack" *ngIf="user.user.shop.first" src="../assets/pixelSword.png" alt="sword" />
+                <span *ngIf="user.user.shop.first">{{user.user.shop.first.attack}}</span><br />
+                <span *ngIf="user.user.shop.first">{{user.user.shop.first.type}}</span><br />
+                <input class="button"
+                    *ngIf="user.user.shop.first && user.user.gold > 0 && vacancy && buyFromProp == '' && !moving"
+                    type="button" value="BUY" (click)="buyFromMethod('first')" />
+            </div>
+            <div class="shopCharacterDiv">
+                <img class="characterImg" *ngIf="user.user.shop.second"
+                    src="../assets/{{user.user.shop.second.type}}.gif" alt="{{user.user.shop.second.type}}" />
+                <img class="heart" *ngIf="user.user.shop.second" src="../assets/pixelHeart.png" alt="heart" />
+                <span *ngIf="user.user.shop.second">{{user.user.shop.second.health}}</span>
+                <img class="attack" *ngIf="user.user.shop.second" src="../assets/pixelSword.png" alt="sword" />
+                <span *ngIf="user.user.shop.second">{{user.user.shop.second.attack}}</span><br />
+                <span *ngIf="user.user.shop.second">{{user.user.shop.second.type}}</span><br />
+                <input class="button"
+                    *ngIf="user.user.shop.second && user.user.gold > 0 && vacancy && buyFromProp == '' && !moving"
+                    type="button" value="BUY" (click)="buyFromMethod('second')" />
+            </div>
+            <div class="shopCharacterDiv">
+                <img class="characterImg" *ngIf="user.user.shop.third" src="../assets/{{user.user.shop.third.type}}.gif"
+                    alt="{{user.user.shop.third.type}}" />
+                <img class="heart" *ngIf="user.user.shop.third" src="../assets/pixelHeart.png" alt="heart" />
+                <span *ngIf="user.user.shop.third">{{user.user.shop.third.health}}</span>
+                <img class="attack" *ngIf="user.user.shop.third" src="../assets/pixelSword.png" alt="sword" />
+                <span *ngIf="user.user.shop.third">{{user.user.shop.third.attack}}</span><br />
+                <span *ngIf="user.user.shop.third">{{user.user.shop.third.type}}</span><br />
+                <input class="button"
+                    *ngIf="user.user.shop.third && user.user.gold > 0 && vacancy && buyFromProp == '' && !moving"
+                    type="button" value="BUY" (click)="buyFromMethod('third')" />
+            </div>
+            <div class="shopCharacterDiv">
+                <img class="characterImg" *ngIf="user.user.shop.fourth"
+                    src="../assets/{{user.user.shop.fourth.type}}.gif" alt="{{user.user.shop.fourth.type}}" />
+                <img class="heart" *ngIf="user.user.shop.fourth" src="../assets/pixelHeart.png" alt="heart" />
+                <span *ngIf="user.user.shop.fourth">{{user.user.shop.fourth.health}}</span>
+                <img class="attack" *ngIf="user.user.shop.fourth" src="../assets/pixelSword.png" alt="sword" />
+                <span *ngIf="user.user.shop.fourth">{{user.user.shop.fourth.attack}}</span><br />
+                <span *ngIf="user.user.shop.fourth">{{user.user.shop.fourth.type}}</span><br />
+                <input class="button"
+                    *ngIf="user.user.shop.fourth && user.user.gold > 0 && vacancy && buyFromProp == '' && !moving"
+                    type="button" value="BUY" (click)="buyFromMethod('fourth')" />
+            </div>
+        </div>
+    </div>
+</div>

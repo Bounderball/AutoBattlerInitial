@@ -1,0 +1,9 @@
+<div id="div">
+    <h1 id="title">HEROES & HAVOC</h1>
+    <span id="userNameLabel">Username: </span>
+    <input id="tbUsername" type="text" [(ngModel)]="username" style="font-size: large;" /><br /><br />
+    <input class="button" type="button" value="Login" (click)="login()" /><br />
+    <div id="loadingMessageDiv">
+        <span id="loadingMessage" *ngIf="this.loading">Loading...</span>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div id="fightBackground" [style.background-image]="'url(' + backgroundImageUrl + ')'">
+    <div id="fight_demo_json">
+        {{fight_history|json}}
+    </div>
+    <div id="fightStatusText"></div>
+    <div id="partiesDiv">
+        <div id="heroesParty">
+            <div class="heroesCharacterDiv">
+                <img class="heroesCharacterImg" src="../assets/itamar.gif" alt="itamar" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.heroesParty.fourth.health}}</span>
+            </div>
+            
+            <div class="heroesCharacterDiv">
+                <img class="heroesCharacterImg" src="../../assets/healer.gif" alt="healer" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.heroesParty.third.health}}</span>
+            </div>
+
+            <div class="heroesCharacterDiv">
+                <img class="heroesCharacterImg" src="../../assets/rouge.gif" alt="rouge" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.heroesParty.second.health}}</span>
+            </div>
+
+            <div class="heroesCharacterDiv">
+                <img class="heroesCharacterImg" src="../../assets/paladin.gif" alt="paladin" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.heroesParty.first.health}}</span>
+            </div>
+        </div>
+        <div id="enemiesParty">
+            <div class="enemiesCharacterDiv">
+                <img class="enemiesCharacterImg" src="../../assets/zebra.gif" alt="zebra" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.enemiesParty.first.health}}</span>
+            </div>
+
+            <div class="enemiesCharacterDiv">
+                <img class="enemiesCharacterImg" src="../../assets/tank.gif" alt="tank" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.enemiesParty.second.health}}</span>
+            </div>
+
+            <div class="enemiesCharacterDiv">
+                <img class="enemiesCharacterImg" src="../../assets/ranger.gif" alt="ranger" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.enemiesParty.third.health}}</span>
+            </div>
+
+            <div class="enemiesCharacterDiv">
+                <img class="enemiesCharacterImg" src="../../assets/knight.png" alt="knight" /><br />
+                <img class="heart" src="../assets/pixelHeart.png" alt="heart" />
+                <span>{{this.enemiesParty.fourth.health}}</span>
+            </div>
+        </div>
+    </div>
+</div>

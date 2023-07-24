@@ -1,0 +1,72 @@
+div {
+    text-align: center;
+}
+
+#div {
+    background-image: url("../../assets/ShopBackground2.gif");
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button:focus {
+    outline: none;
+}
+
+#userNameLabel {
+    position: relative;
+    top: 0.2rem;
+    font-size: 2.5rem;
+    color: darkorange;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+#title {
+    font-size: 5rem;
+    color: greenyellow;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+#tbUsername {
+    border-radius: 0.5rem;
+    background-color: darkgoldenrod;
+    color: beige
+}
+
+#loadingMessageDiv {
+    margin-top: 1rem;
+}
+
+#loadingMessage {
+    color: white;
+    font-size: 2rem;
+    -webkit-text-stroke: 0.05rem black;
+}
